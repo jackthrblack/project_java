@@ -49,12 +49,24 @@ public class GameService {
 		System.out.println("\n");
 
 		int potion = 2;
-		cList.get(0).setPotion(cList.get(0).getPotion() + potion);
-		System.out.println("현재물약:" + cList.get(0).getPotion());
-
+		if(cList.get(0).getPotion()==0) {
+			cList.get(0).setPotion(cList.get(0).getPotion()+potion);
+			System.out.println("현재물약:" + cList.get(0).getPotion());
+		}else {
+			cList.get(0).setPotion(2);
+			System.out.println("포션의 최대 갯수는 2개입니다.");
+			System.out.println("현재물약:" + cList.get(0).getPotion());
+		}
+		
 		int dokdoShrimp = 40;
-		cList.get(0).setAtt(cList.get(0).getAtt() + dokdoShrimp);
-		System.out.println("현재공격력:" + cList.get(0).getAtt());
+		if(cList.get(0).getAtt()==20) {
+			cList.get(0).setAtt(cList.get(0).getAtt()+dokdoShrimp);
+			System.out.println("현재공격력:" + cList.get(0).getAtt());
+		}else {
+			cList.get(0).setAtt(60);
+			System.out.println("최대 공격력은 60입니다.");
+			System.out.println("현재공격력:" + cList.get(0).getAtt());
+		}
 		return cList;
 	}
 
