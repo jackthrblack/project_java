@@ -1,4 +1,4 @@
-package project1;
+ package project1;
 
 import java.util.*;
 
@@ -36,17 +36,23 @@ public class GameMain {
 
 				case 1:
 					gs.chStatus(cList);
-
 					break;
 				case 2:
 					boolean adv = true;
 					gd.adventure();
 					while (adv) {
+
 						int sel = in.nextInt();
 						if (sel == mon) {
-							cList = gs.fight(mList, cList);
+							int rpg = 0;
+							rpg = gs.fight(rpg, mList, cList);
+							if(rpg==0) {
 							run = false;
 							break;
+							}else if(rpg==1) {
+							sel = 3;
+							break;
+							}
 						} else if (sel == 11) {
 							gs.chDrop(cList);
 							gd.adventure();
@@ -78,3 +84,5 @@ public class GameMain {
 		}
 	}
 }
+
+
